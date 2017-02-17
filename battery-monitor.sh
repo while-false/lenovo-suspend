@@ -1,4 +1,8 @@
-#!/usr/bin/bash
+#!/bin/bash
+
+set -ue
+
+echo "$0 started"
 
 BATTERY_PATH="$(find /sys/devices/ | grep 'BAT0$')"
 CRITICAL_LEVEL=20
