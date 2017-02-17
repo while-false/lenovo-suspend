@@ -13,7 +13,7 @@ CRITICAL_ACTION="systemctl suspend"
     exit -1 
 
 while true; do
-    [[ "$(cat "${BATTERY_PATH}/status")" = "Discharging" || "$(cat "${BATTERY_PATH}/status")" = "Unknown" ]] &&
+    [[ $(cat "${BATTERY_PATH}/status") = "Discharging" || $(cat "${BATTERY_PATH}/status") = "Unknown" ]] &&
     [[ $(cat "${BATTERY_PATH}/capacity") -lt ${CRITICAL_LEVEL} ]] &&
         echo "Battery below critical." &&
         ${CRITICAL_ACTION} &&
